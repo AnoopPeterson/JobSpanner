@@ -29,8 +29,9 @@ async function getcal(resumeskills, jobskills, timeneeded) {
 
 const PrepPage = () => {
   // state for calendar available
-  // const job = JSON.parse(localStorage.getItem('jobListingInformation'));
+  const job = JSON.parse(localStorage.getItem('jobListingInformation'));
   const resume = JSON.parse(localStorage.getItem('resumeExtraction'));
+  console.log(`prep page: ${job.skills}`);
   console.log(`prep page: ${resume}`)
   const missingSkills = ['Python', 'Java', 'GraphQL', 'Prompt Engineering']
 

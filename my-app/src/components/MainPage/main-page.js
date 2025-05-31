@@ -73,7 +73,6 @@ const MainPage = () => {
   const handleSearch = async (query) => {
     setIsLoading(true);
     const results = await getJobInformation(query);
-    localStorage.setItem('jobListingInformation', JSON.stringify(results));
     setSearchResults(results);
     setHasSearched(true);
     setIsLoading(false);
@@ -84,6 +83,16 @@ const MainPage = () => {
     if (job == null || resumeInformation == null){
       console.log("hey you need both");
     } else {
+      const jobListingInformation = { 
+        "id"               : job._id,
+        "title"            : job.jobname,
+        "description"      : job.job_description,
+        "skills"           : job.skills,
+        "technologyskills" : job.technology_skills  
+      }
+
+      console.log(jobListingInformation);
+      localStorage.setItem('jobListingInformation', JSON.stringify(jobListingInformation));
       navigate(`/prepare/${job._id}`);
     }
   };
