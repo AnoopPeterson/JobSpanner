@@ -65,7 +65,7 @@ class ScheduleQuery(BaseModel):
 class ScheduleResponse(BaseModel):
     cal_fp: str
 
-db = sql.connect('../data/credentials.db')
+db = sql.connect('../files/credentials.db')
 
 @app.post("/login/")
 async def userauth(data: Annotated[UserAuth, Form()]):

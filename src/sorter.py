@@ -293,10 +293,10 @@ def event_data(final_schedule):
                 #add the event to the cal
                 calendar.events.add(event)
     #open the fil and write
-    with open("../data/calendar_schedule.ics", "w") as file:
+    with open("../files/calendar_schedule.ics", "w") as file:
         file.writelines(calendar)
     #opent the file and read
-    with open("../data/calendar_schedule.ics", "r") as file:
+    with open("../files/calendar_schedule.ics", "r") as file:
         imported_calendar = Calendar(file.read())
 
     
