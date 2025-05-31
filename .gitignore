@@ -24,4 +24,4 @@
 .env
 venv/
 credentials.db-journal
-__pycache__/*
+src/__pycache__
